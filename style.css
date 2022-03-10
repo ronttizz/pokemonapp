@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+:root {
+  --mainFont: "Play", sans-serif;
+  --primaryColor: rgb(0, 99, 192);
+  --secondaryColor: rgb(4, 113, 255);
+  --darkColor: rgb(0, 19, 105);
+  --lightColor: rgb(252, 238, 209);
+  --greyColor: rgb(161, 161, 161);
+  --bg-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/09/All-Pokemon-Desktop-Background.png");
+  --bg-color: rgb(123, 172, 119);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--mainFont);
+}
+
+body {
+  background: var(--bg-image) fixed no-repeat center top;
+  background-position: 0px -250px;
+  background-size: 100vw;
+  background-color: var(--bg-color);
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+
+h1 {
+  font-size: 5rem;
+  color: rgb(1, 14, 201);
+  text-shadow: 0 0 5px white;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+#grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 90vw;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 7px;
+  width: 15vw;
+  height: 14rem;
+  padding-top: 1rem;
+  background-color: white;
+  transition-duration: 1s;
+}
+
+.card img {
+  filter: grayscale(80%);
+  max-height: 60%;
+}
+
+.card:hover {
+  transform: scale(110%);
+}
+
+.card:hover .cardName {
+  background-color: var(--primaryColor);
+}
+
+.card:hover img {
+  filter: grayscale(0);
+}
+
+.cardImage {
+  width: 100%;
+}
+
+.cardName {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 7px 7px;
+  background-color: var(--darkColor);
+  width: 100%;
+  height: 3rem;
+  color: white;
+  text-transform: capitalize;
+}
+
+.types {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 1200px) {
+  body {
+    background-position: 0 0;
+  }
+  #grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 95vw;
+  }
+
+  .card {
+    width: 20vw;
+  }
+}
+
+@media (max-width: 800px) {
+  #grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    width: 40vw;
+  }
+}
